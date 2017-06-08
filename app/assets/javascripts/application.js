@@ -17,3 +17,4 @@
 //= require chosen-jquery
 //= require_tree .
 //= require messages
+//= require jquery.rateyo

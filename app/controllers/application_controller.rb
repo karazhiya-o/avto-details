@@ -6,9 +6,11 @@ class ApplicationController < ActionController::Base
 	  redirect_back_or root_path
 		end
 
+
 	def redirect_back_or(path)
 	  redirect_to request.referer || path
 	end
 
 
+  
 end

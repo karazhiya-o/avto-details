@@ -3,6 +3,10 @@ class UserparamsController < ApplicationController
   	@userparam = Userparam.new
   end
 
+   def index
+    @userparam = Userparam.order('created_at DESC').paginate(page: params[:page], per_page: 30)
+  end
+
   def create
   	   @userparam = current_user.build_userparam(user_params)
   	if @userparam.save

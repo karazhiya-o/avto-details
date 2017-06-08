@@ -9,4 +9,8 @@ class User < ApplicationRecord
          has_many :orders
 
          acts_as_messageable
+
+         def mailboxer_email(object)
+			     email
+			   end
 end
