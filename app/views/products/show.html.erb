@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-4 col-sm-6">
       <div class="thumbnail">
          <%= image_tag @product.photo_file_name, size:"400x300"%> <br> 
 
@@ -8,9 +8,9 @@
             <%= @product.description%> <br>
 			<%= @product.cost%> <br>
 			<%= @product.maker%>
-
-			<%= link_to "Comment", show_comments_path(:id=>@product.id), class: "btn btn-success" %>
-			<%= link_to "Buy", buy_product_path(:id=>@product.id), class: "btn btn-danger" %>
+      <div id="rateYo">Rating</div>
+			<%= link_to "Comment", show_comments_path(:id=>@product.id), class: "btn btn-primary" %>
+			<%= link_to "Buy", buy_product_path(:id=>@product.id), class: "btn btn-default" %>
    	
           </div>
         
@@ -22,3 +22,21 @@
 
   </div>
 </div>
+
+
+<script>
+ $(function () {
+ 
+  $("#rateYo").rateYo({
+ 
+    rating    : 1.6,
+    spacing   : "5px",
+    multiColor: {
+ 
+      "startColor": "#FF0000", //RED
+      "endColor"  : "#00FF00"  //GREEN
+    }
+  });
+ 
+});
+</script>
