@@ -18,3 +18,5 @@
 //= require_tree .
 //= require messages
 //= require jquery.rateyo
+//= require jquery.raty
+//= require ratyrate

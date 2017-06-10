@@ -8,6 +8,9 @@ class User < ApplicationRecord
          has_many :comments
          has_many :orders
 
+        ratyrate_rateable 'original_score'
+        ratyrate_rater
+
          acts_as_messageable
 
          def mailboxer_email(object)

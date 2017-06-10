@@ -1,11 +1,15 @@
+<head>
+<link rel="javascript_include_tag" href="ratyrate.js"/>
+</head>
+
 <style>
 
 .lib-panel {
     margin-bottom: 20Px;
 }
 .lib-panel img {
-    width: 100%;
-    background-color: transparent;
+    /*width: 100%;
+ */   background-color: transparent;
 }
 
 .lib-panel .row,
@@ -87,7 +91,7 @@
                 <div class="lib-panel">
                     <div class="row box-shadow">
                         <div class="col-md-6">
-                            <%= image_tag @product.photo_file_name, size:"400x300"%>
+                            <%= image_tag @product.photo_file_name, width:290%>
                         </div>
                         <div class="col-md-6">
                             <div class="lib-row lib-header">
@@ -98,8 +102,11 @@
                                 <%= @product.description%> <br> 
                                 <br>
                                 <h5 class="price-text-color" style="text-align: right;"> Ціна: <%= @product.cost%> <br> </h5>
-                                <h5> Виробник : </h5><%= @product.maker%>
-                                    <div id="rateYo">Rating</div>
+                                <h5> Виробник : <%= @product.maker%> <br></h5>
+      
+       
+                Оцінка : <%= rating_for @product, "original_score", stars: 5 %>
+
                 <%= link_to "Comment", show_comments_path(:id=>@product.id), class: "btn btn-info" %>
                 <%= link_to "Buy", buy_product_path(:id=>@product.id), class: "btn btn-info" %>
                               </div>
