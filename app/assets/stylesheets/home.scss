@@ -7,13 +7,13 @@ body
 {
 	background-color: #fff;
 	color: black;
-	font-family: verdana, arial, helvetica, sans-serif;
-	font-size: 13px;
+	font-family:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size: 14px;
 	line-height: 18px;
 	background-image:image-url('back.jpg');
-	
+	background-repeat: no-repeat;
+    background-attachment: fixed;
 
-	bachground-repeat:no-repeat;
 	background-size: 100%;
 }
 

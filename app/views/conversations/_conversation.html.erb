@@ -1,3 +1,5 @@
+
+
 <li class="list-group-item clearfix">
   <%= link_to conversation.subject, conversation_path(conversation) %>
 
@@ -7,8 +9,8 @@
 
     
     <% else %>
-      <%= link_to 'Move to trash', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete,
-                  data: {confirm: 'Are you sure?'} %>
+      <%= link_to 'Видалити', conversation_path(conversation), class: 'btn btn-xs btn-danger', method: :delete,
+                  data: {confirm: 'Ви впевнені що бажаєте видалити?'} %>
 
       <% if conversation.is_unread?(current_user) %>
 
@@ -23,3 +25,4 @@
   <p><%= conversation.last_message.body %>
     <small>(<span class="text-muted"><%= conversation.last_message.created_at.strftime("%-d %B %Y, %H:%M:%S") %></span>)</small></p>
 </li>
+

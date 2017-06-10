@@ -1,11 +1,33 @@
+<style>
+	.block
+	{
+		display: block; 
+		width: 50%;
+		height: 40%;
+		
+	
+		position: center;
+		margin: 0 auto; /* Отступ слева и справа */
+ 		background: rgba(255,255,255,0.75);
+		
+		background-image: 
+  linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0)), 
+  linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,0)), 
+  radial-gradient(50% 100%, ellipse cover, rgba(0,0,0, 0.05), rgba(0,0,0,0) 50%);
+	}
+
+</style>
+<div class="block">
+
 <% if @comments == nil%>
-<p>Sorry</p>
+	<p>На даний час ніхто ще не залишив відгуд про даний товар </p>
 <%else%>
 <% @comments.each do |comment|%>
 <p> <%= comment.body%>
-<%= link_to 'Delete', product_comment_path(:id=>comment.id), method: :put, data: { confirm: 'are_you_sure?' } %> </p>
+<%= link_to 'Видалити', product_comment_path(:id=>comment.id), method: :put, data: { confirm: 'are_you_sure?' } %> </p>
 
 <% end %>
 <% end %>
-<h2>Add a comment</h2>
+<h2><center>Додати коментар</center></h2>
 <%= render 'comments/form' %>
+</div>

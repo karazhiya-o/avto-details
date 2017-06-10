@@ -1,10 +1,50 @@
+<style>
+.gradient-list {
+    overflow:hidden; 
+display:inline-block;
+  background: rgba(255,255,255,0.75);
+  margin: 10px auto 0;
+  float: left;
+  margin-left: 1%;
+  padding: 0;
+  //width: 15%;
+  text-align: center;
+  list-style: none;
+  box-shadow:
+  inset 0 0 0 1px rgba(255,255,255,0.5),
+        0 1px 3px rgba(0,0,0,0.1),
+        0 0 0 1px rgba(0,0,0,0.05),
+        0 3px 8px rgba(0,0,0,0.1);
+}
+.gradient-list a {
+  text-decoration: none;
+  color: #777;
+  font-family: Georgia, serif;
+  font-size: 1.5em;
+  font-style: italic;
+  text-shadow: 0 1px 1px rgba(255,255,255,0.25);
+}
+.gradient-list li {
+  border-bottom: 1px solid transparent;
+  padding: 20px;
+  background-image: 
+  linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0)), 
+  linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,0)), 
+  radial-gradient(50% 100%, ellipse cover, rgba(0,0,0, 0.05), rgba(0,0,0,0) 50%);
+  background-size: 100% 1px, 100% 1px, auto;
+  background-position: 50% 100%, 50% 100%, 50% 0;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-origin: padding-box, border-box, padding-box;
+}
+.gradient-list li:last-child {
+  border-bottom: none;
+}
+</style>
+
 <% page_header "Ваші повідомлення" %>
-
-<p><%= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary' %></p>
-
-<div class="row">
-  <div class="col-sm-3">
-    <ul class="nav nav-pills nav-stacked">
+  <div class="menu">
+    <ul class="gradient-list">
+      <%= link_to 'Написати повідомлення', new_message_path, class: 'btn btn-default' %>
       <%= mailbox_section 'inbox', @box %> 
       <%= mailbox_section 'sent', @box %>
       <%= mailbox_section 'trash', @box %>
@@ -15,7 +55,7 @@
    
     <% if @box == 'trash' %>
       <p>
-      <%= link_to 'Empty trash', empty_trash_conversation_conversations_path(:conversation_id), method: :destroy, data: {confirm: 'Are you sure?'}, class: 'btn btn-danger' %></p>
+      <%= link_to 'Відправити до корзини', empty_trash_conversation_conversations_path(:conversation_id), method: :destroy, data: {confirm: 'Ви впевнені?'}, class: 'btn btn-danger' %></p>
 
     
 
@@ -29,4 +69,4 @@
 
     <%= will_paginate %>
   </div>
-</div>
+

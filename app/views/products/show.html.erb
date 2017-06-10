@@ -1,27 +1,116 @@
+<style>
+
+.lib-panel {
+    margin-bottom: 20Px;
+}
+.lib-panel img {
+    width: 100%;
+    background-color: transparent;
+}
+
+.lib-panel .row,
+.lib-panel .col-md-6 {
+    padding: 3;
+     background: rgba(255,255,255,0.75);
+    
+
+}
+
+
+.lib-panel .lib-row {
+    padding: 0 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header {
+    background-color: #FFFFFF;
+    font-size: 20px;
+    padding: 10px 20px 0 20px;
+}
+
+.lib-panel .lib-row.lib-header .lib-header-seperator {
+    height: 2px;
+    width: 26px;
+    background-color: #d9d9d9;
+    margin: 7px 0 7px 0;
+}
+
+.lib-panel .lib-row.lib-desc {
+    position: relative;
+    height: 100%;
+
+    display: block;
+    font-size: 13px;
+}
+.lib-panel .lib-row.lib-desc a{
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    left: 20px;
+}
+
+.row-margin-bottom {
+    margin-bottom: 20px;
+
+}
+
+.box-shadow {
+    -webkit-box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+    box-shadow: 0 0 10px 0 rgba(0,0,0,.10);
+
+    margin: 0 auto;
+}
+
+.no-padding {
+    padding: 0;
+    width: 50%
+
+}
+.price-text-color
+{
+    color: #219FD1;
+    font-size: 18px;
+    font-weight: bold; 
+}
+
+
+</style>
+
+
+
+
+
 <div class="container">
-  <div class="row">
-   <div class="col-md-4 col-sm-6">
-      <div class="thumbnail">
-         <%= image_tag @product.photo_file_name, size:"400x300"%> <br> 
-
-          <div class="caption">
-            <%= @product.description%> <br>
-			<%= @product.cost%> <br>
-			<%= @product.maker%>
-      <div id="rateYo">Rating</div>
-			<%= link_to "Comment", show_comments_path(:id=>@product.id), class: "btn btn-primary" %>
-			<%= link_to "Buy", buy_product_path(:id=>@product.id), class: "btn btn-default" %>
-   	
-          </div>
-        
-      </div>
-    </div>
-
-
-
-
-  </div>
+  
+    <hr>
+            <div class="row row-margin-bottom">
+            <div class="col-md-5 no-padding lib-item" data-category="view">
+                <div class="lib-panel">
+                    <div class="row box-shadow">
+                        <div class="col-md-6">
+                            <%= image_tag @product.photo_file_name, size:"400x300"%>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="lib-row lib-header">
+                                <%= @product.prname %> 
+                                <div class="lib-header-seperator"></div>
+                            </div>
+                              <div class="caption">
+                                <%= @product.description%> <br> 
+                                <br>
+                                <h5 class="price-text-color" style="text-align: right;"> Ціна: <%= @product.cost%> <br> </h5>
+                                <h5> Виробник : </h5><%= @product.maker%>
+                                    <div id="rateYo">Rating</div>
+                <%= link_to "Comment", show_comments_path(:id=>@product.id), class: "btn btn-info" %>
+                <%= link_to "Buy", buy_product_path(:id=>@product.id), class: "btn btn-info" %>
+                              </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
 </div>
+
 
 
 <script>

@@ -1,4 +1,28 @@
-<%= form_for @userparam do |f|%>
+<style>
+
+  .content {
+    width: 75%;
+    background: rgba(255,255,255,0.75);
+    background-image: 
+  		linear-gradient(0deg, rgba(0,0,0,0), rgba(0,0,0,0.1) 50%, rgba(0,0,0,0)), 
+  		linear-gradient(0deg, rgba(255,255,255,0), rgba(255,255,255,0.8) 50%, rgba(255,255,255,0)), 
+  		radial-gradient(50% 100%, ellipse cover, rgba(0,0,0, 0.05), rgba(0,0,0,0) 50%);
+    padding: 20px;
+    overflow: hidden;
+    position: center;
+	margin: 0 auto; /* Отступ слева и справа */
+}
+
+.content img {
+    margin-right: 15px;
+    float: left;
+}
+
+
+</style>
+<div class="content">
+	
+	<%= form_for @userparam do |f|%>
 
 		<div class = "form-group">
 		<%= f.label :firstname %>
@@ -23,10 +47,11 @@
 
 
 		<div class = "form-group">
-		<%= f.button :submit, class: "btn btn-info pull-right" %>
+		<%= f.button :submit, class: "btn btn-info" %>
 		</div>
 
 
 
 
 <%end%>
+</div>
