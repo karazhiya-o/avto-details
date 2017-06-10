@@ -22,18 +22,18 @@
     </div>
 
     <ul class="nav navbar-nav">
-      <li class="active"> <%= link_to "My Cart", orders_path %></li>
+      <li class="active"> <%= link_to "Корзина ", orders_path %></li>
 
         <% if user_signed_in? %>
         
         <li><%= link_to current_user.email, profile_path  %></li>
         <li><%= link_to 'Ваші повідомлення', conversations_path %></li>
-        <li><%= link_to 'Logout', sign_out_path %></li>
+        <li><%= link_to 'Вихід', sign_out_path %></li>
          <% else %>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-      <li><span class="glyphicon glyphicon-user"> <%= link_to 'Registration', sign_up_path %></span> </li> <br />
-      <li><span class="glyphicon glyphicon-log-in"> <%= link_to 'Login', sign_in_path %></span> </li>
+      <li><span class="glyphicon glyphicon-user"> <%= link_to 'Реєстрація', sign_up_path %></span> </li> <br />
+      <li><span class="glyphicon glyphicon-log-in"> <%= link_to 'Вхід', sign_in_path %></span> </li>
        <% end %>
     </ul>
   </div>
