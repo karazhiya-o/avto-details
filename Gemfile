@@ -38,7 +38,7 @@ gem 'bootstrap-sass'
 gem 'bootstrap-will_paginate'
 gem 'will_paginate'
 
-
+gem 'thin'
 gem "paperclip"
 gem "mailboxer"
 gem 'gravatar_image_tag'
